@@ -6,17 +6,20 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 if __name__ == '__main__':
-    table_num = 20
+    table_num = 500
     e = []
     for j in range(1, table_num):
         table_name = "table{}".format(str(j))
         op = MySqlOperation()
-        op.create_table(table_name)
+
+        # 初次创建时保留此语句，想多次运行测试稳定性时需将此语句注释掉
+        # op.ini_table(table_name)
+
         rand_producer = MyRandom()
         score_list = rand_producer.get_normal_score()
         attendance_list = rand_producer.get_random_attendance(score_list.copy())
         for i in range(90):
-            op.add_attendance(table_name, i + 1, attendance_list[i])
+            op.update_attendance(table_name, i + 1, attendance_list[i])
             op.update_score(table_name, i + 1, score_list[i])
 
         trainer = Train(attendance_list, score_list)
