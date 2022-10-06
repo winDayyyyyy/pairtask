@@ -12,7 +12,7 @@ class MySqlOperation:
         self.cur = self.con.cursor()
 
     def create_table(self, table_name):
-        create_word = "create table if not exists {}(id int AUTO_INCREMENT PRIMARY KEY NOT NULL, " \
+        create_word = "create table if not exists {}(id int NOT NULL, " \
                       "attendance varchar(21) NOT NULL, plan varchar(21), score float);".format(table_name)
         self.cur.execute(create_word)
 
@@ -50,6 +50,10 @@ class MySqlOperation:
             plan.append(i[0])
         self.con.commit()
         return plan
+
+    def drop_table(self, table_name):
+        drop_word = "drop table {};".format(table_name)
+        self.cur.execute(drop_word)
 
     def free_link(self):
         self.cur.close()

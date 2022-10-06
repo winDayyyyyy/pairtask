@@ -19,7 +19,6 @@ class Train:
             sorted_score = sorted(enumerate(score_copy), key=lambda x: x[1])
             # idx为分数排名对应的下标，如idx[0] = 3代表分数最小的是3号学生
             idx = [i[0] for i in sorted_score]
-            print(idx)
             # 前20差的学生中选出15个抽点
             chosen = random.sample(range(0, 20), 15)
             sel_stu_id = []
