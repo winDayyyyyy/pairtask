@@ -13,7 +13,7 @@ if __name__ == '__main__':
         op.add_attendance("table1", i+1, attendance_list[i])
         op.update_score("table1", i+1, score_list[i])
 
-    trainer = Train(attendance_list)
+    trainer = Train(attendance_list, score_list)
     plan_list = trainer.train()
     for i in range(90):
         op.update_plan("table1", i+1, plan_list[i])

@@ -22,16 +22,16 @@ class MyRandom:
             self.score.append(val)
         return self.score
 
-    # 实现5-8位同学缺席了该学期80%的课
-    def turn_bad_absence(self):
-
-
-    # 实现每次课程有0-3位同学由于各种原因缺席
-    def turn_random_absence(self):
+    # # 实现5-8位同学缺席了该学期80%的课
+    # def turn_bad_absence(self):
+    #
+    #
+    # # 实现每次课程有0-3位同学由于各种原因缺席
+    # def turn_random_absence(self):
 
 
     # 获得随机生成后的出勤序列
     def get_random_attendance(self):
-        self.turn_bad_absence()
-        self.turn_random_absence()
+        # self.turn_bad_absence()
+        # self.turn_random_absence()
         return self.attendance_list
