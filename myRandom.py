@@ -2,6 +2,7 @@ import random
 import heapq
 from random import sample
 
+
 class MyRandom:
     attendance_list = []
     score = []
@@ -25,7 +26,8 @@ class MyRandom:
         return self.score
 
     # 实现5-8位同学缺席了该学期80%的课
-    def turn_bad_absence(self, score):
+    def turn_bad_absence(self):
+        score = self.score.copy()
         score_min = heapq.nsmallest(20, score)  # 获取最小的20个值并排序
         index_min = map(score.index, score_min)  # 获取最小的20个值的下标
         # print(list(index_min))   map生成的对象要转化成为list才能输出
@@ -52,7 +54,7 @@ class MyRandom:
                 self.attendance_list[absent_cnt[j]] = "".join(list2)
 
     # 获得随机生成后的出勤序列
-    def get_random_attendance(self, score):
-        self.turn_bad_absence(score)
+    def get_random_attendance(self):
+        self.turn_bad_absence()
         self.turn_random_absence()
         return self.attendance_list

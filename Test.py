@@ -2,16 +2,15 @@ from mysqlOperation import *
 
 
 class Test:
-    test_op = MySqlOperation()
     attendance = []
     plan = []
     request = 0
     success_hit = 0
     e = 0.0
 
-    def get_data(self, table_name):
-        self.attendance = self.test_op.fetch_attendance(table_name)
-        self.plan = self.test_op.fetch_plan(table_name)
+    def get_data(self, attendance_list, plan_list):
+        self.attendance = attendance_list
+        self.plan = plan_list
 
     def count_e(self):
         for i in range(90):

@@ -7,8 +7,8 @@ class Train:
     score_list = []
 
     def __init__(self, attendance_list, score_list):
-        self.attendance_list = attendance_list.copy()
-        self.score_list = score_list.copy()
+        self.attendance_list = attendance_list
+        self.score_list = score_list
 
     def train(self):
         success_choose = []
