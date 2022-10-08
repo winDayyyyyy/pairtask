@@ -26,7 +26,7 @@ myRandom.py是随机数生成算法
 
 mysqlOperation.py是有关于MySQL的一系列操作，包括创建、新增、更新、查询、删除等等
 
-Test.py是在每门课一学期都点相同次数（160次）的情况下，计算每门课的e值并传递给main.py
+Test.py是在每门课一学期都点相同次数（160）的情况下，计算每门课的e值并传递给main.py
 
 Train.py是抽点检测的算法
 
