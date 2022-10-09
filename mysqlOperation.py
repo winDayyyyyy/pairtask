@@ -61,6 +61,16 @@ class MySqlOperation:
         self.con.commit()
         return plan
 
+    def fetch_score(self, table_name):
+        score = []
+        sel_score_word = "select score from {};".format(table_name)
+        self.cur.execute(sel_score_word)
+        result = self.cur.fetchall()
+        for i in result:
+            score.append(i[0])
+        self.con.commit()
+        return score
+
     def drop_table(self, table_name):
         drop_word = "drop table {};".format(table_name)
         self.cur.execute(drop_word)
