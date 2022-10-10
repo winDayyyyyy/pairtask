@@ -34,7 +34,7 @@ class Train:
                     # attendance_list中，1代表缺勤
                     if self.attendance_list[i][j] == "1":
                         self.score_list[i] -= 100
-                        self.next_choose_list.append(i);
+                        self.next_choose_list.append(i)
                         success_choose[i] += 1
                         if success_choose[i] >= 2:
                             self.score_list[i] -= 1000

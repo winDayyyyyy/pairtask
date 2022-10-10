@@ -16,7 +16,7 @@ class Test:
 
     def count_e(self):
         for i in range(90):
-            for j in range(1,21):
+            for j in range(1, 21):
                 if self.plan[i][j] == '1':
                     self.request += 1
                     if self.attendance[i][j] == '1':
